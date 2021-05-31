@@ -1,8 +1,6 @@
 ## Supported Go versions
-----
 
 ## Feature Overview
-----
 
 - Wrapper of Notion API from Developers Beta(https://developers.notion.com/)
 - Support Databases API
@@ -12,7 +10,6 @@
 - Support Search API
 
 ## Guide
-----
 
 ### Installation
 
@@ -33,14 +30,36 @@ import (
 )
 
 func main() {
-	nt := notion.New(
-		api.New(os.Getenv("NOTION_AUTHORIZATION"),
-			&api.Option{Timeout: time.Second * 3}))
+	//token := "secret_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	token := os.Getenv("NOTION_AUTHORIZATION")
+
+	nt := notion.New(api.New(token, &api.Option{
+		Timeout: time.Second * 3,
+	}))
 
 	fmt.Println(nt.APIVersion())
 }
 ```
 
+#### Databases
+*List Databases*
+```go
+//List Databases
+resp, err := nt.ListDatabases(&notion.PaginationRequest{}) // can use nil pointer
+if err != nil {
+    panic(err)
+}
+
+databases, err := resp.Databases()
+if err != nil {
+    panic(err)
+}
+
+for _, database := range databases {
+    fmt.Println("ID:", database.ID())
+}
+```
+
+
 ## License
-----
 MIT
