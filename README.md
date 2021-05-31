@@ -13,7 +13,7 @@
 
 ### Installation
 
-> go get github.com/hunydev/notionapi
+> go get github.com/hunydev/notion
 
 ### Example
 
