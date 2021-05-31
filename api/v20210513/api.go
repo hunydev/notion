@@ -3,7 +3,7 @@ package v20210513
 import (
 	"time"
 
-	"huny.dev/notion/api"
+	"github.com/hunydev/notion/api"
 )
 
 type API struct {

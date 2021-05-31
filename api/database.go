@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"huny.dev/notion"
+	"github.com/hunydev/notion"
 )
 
 func (api *API) RetrieveDatabase(DatabaseID string) (*notion.Database, error) {

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"huny.dev/notion"
+	"github.com/hunydev/notion"
 )
 
 func (api *API) Search(Query string, Pagination *notion.PaginationRequest, Filter notion.Object, Sort *notion.Sort) (*notion.PaginationResponse, error) {
